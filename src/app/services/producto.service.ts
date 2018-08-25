@@ -33,6 +33,11 @@ export class ProductoService{
         .map(res => res.json());
     }
 
+    deleteProducto(id){
+        return this._http.get(this.url+'delete-producto/'+id)
+        .map(res => res.json());
+    }
+
     addProducto(producto: Producto){
         let json = JSON.stringify(producto);
         let params = 'json='+json;
